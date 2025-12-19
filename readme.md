@@ -3,20 +3,12 @@ Utility downloads UR data from open data portal if new data are available and lo
 Sample command to start postgres database in docker:
 `docker run -d --rm --name ur-open-data -p 5432:5432 -e POSTGRES_DB=ur_data -e POSTGRES_USER=ur -e POSTGRES_PASSWORD=ur -e POSTGRES_HOST_AUTH_METHOD=trust postgres`
 
-Test from sbt console:
-
-```
-sbt -DUR_OPENDATA_DB="jdbc:postgresql://localhost/ur_data" -DUR_OPENDATA_USR=ur -DUR_OPENDATA_PWD=ur
-Test/console
-lv.opendata.ur.URLoad.main(Array())
-```
-
 To assembly production artifact run:
-```sbt assembly```
+```./mill assembly```
 
 Run example:
 ```
-java -classpath ./src/test/resources:./target/scala-2.13/ur-open-data-assembly-1.0.0.jar -DUR_OPENDATA_DB="jdbc:postgresql://localhost/ur_data" -DUR_OPENDATA_USR=ur -DUR_OPENDATA_PWD=ur lv.opendata.ur.URLoad
+java -classpath ./src/resources:./out/assembly.dest/out.jar -DUR_OPENDATA_DB="jdbc:postgresql://localhost/ur_data" -DUR_OPENDATA_USR=ur -DUR_OPENDATA_PWD=ur lv.opendata.ur.URLoad
 ```
 
 To run from within application:

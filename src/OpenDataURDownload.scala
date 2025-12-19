@@ -1,22 +1,21 @@
 package lv.opendata.ur
 
 import com.typesafe.config.{Config, ConfigFactory}
-
-import java.io.{File, FileInputStream, InputStreamReader}
-import java.sql.{DriverManager, Timestamp}
-import java.time.LocalDateTime
-import scala.concurrent.{ExecutionContext, Future}
-import org.slf4j.LoggerFactory
 import com.typesafe.scalalogging.Logger
 import org.apache.pekko.actor.ActorSystem
 import org.apache.pekko.http.scaladsl.Http
 import org.apache.pekko.http.scaladsl.client.RequestBuilding.{Get, Head}
-import org.apache.pekko.http.scaladsl.model.headers.HttpEncodings.{compress, deflate, gzip}
 import org.apache.pekko.http.scaladsl.model.HttpResponse
+import org.apache.pekko.http.scaladsl.model.headers.HttpEncodings.{compress, deflate, gzip}
 import org.apache.pekko.http.scaladsl.model.headers.{`Accept-Encoding`, `Last-Modified`}
 import org.apache.pekko.stream.scaladsl.FileIO
+import org.slf4j.LoggerFactory
 import org.tresql._
 
+import java.io.{File, FileInputStream}
+import java.sql.{DriverManager, Timestamp}
+import java.time.LocalDateTime
+import scala.concurrent.{ExecutionContext, Future}
 import scala.util.{Failure, Success}
 
 object URLoad {
