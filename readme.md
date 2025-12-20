@@ -8,7 +8,7 @@ To assembly production artifact run:
 
 Run example:
 ```
-java -classpath ./src/resources:./out/assembly.dest/out.jar -DUR_OPENDATA_DB="jdbc:postgresql://localhost/ur_data" -DUR_OPENDATA_USR=ur -DUR_OPENDATA_PWD=ur lv.opendata.ur.URLoad
+java -classpath ./test/resources:./out/assembly.dest/out.jar -DUR_OPENDATA_DB="jdbc:postgresql://localhost/ur_data" -DUR_OPENDATA_USR=ur -DUR_OPENDATA_PWD=ur lv.opendata.ur.URLoad
 ```
 
 To run from within application:

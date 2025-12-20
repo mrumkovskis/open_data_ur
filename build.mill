@@ -14,8 +14,4 @@ object `package` extends ScalaModule {
     mvn"com.typesafe.scala-logging::scala-logging:3.9.5",
     mvn"ch.qos.logback:logback-classic:1.5.20",
   )
-
-  def assemblyRules = Seq(
-    Assembly.Rule.Append("reference.conf"),
-  )
 }
